@@ -1,0 +1,18 @@
+# Please copy paste the following script directly inside your terminal
+cd ~/
+mkdir ~/framework
+journalctl > ~/framework/journal.log
+sudo sysctl -a > ~/framework/sysctl-a.log
+cat /proc/cmdline > ~/framework/proc-cmdline.log
+dmesg > ~/framework/dmesg.log
+cp ~/.local/share/xorg/Xorg.0.log ~/framework/Xorg.0.log 2> /dev/null
+sudo dmidecode > ~/framework/dmidecode
+sudo lspci -vv > ~/framework/lspci.log
+sudo lsusb -vv > ~/framework/lsusb.log
+uname -a > ~/framework/uname.log
+cp /etc/os-release ~/framework/os-release
+lsblk -f > ~/framework/lsblk.log
+df -h > ~/framework/df.log
+cp /etc/fstab ~/framework/fstab.log
+tar czf framework-log.tgz ~/framework/*
+rm -r ~/framework

@@ -1,0 +1,1 @@
+tmux new-session -d -s mysession 's-tui --csv-file s-tui_data.csv' && sleep 120 && tmux send-keys -t mysession q && tmux kill-session -t mysession
